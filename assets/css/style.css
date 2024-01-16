@@ -484,6 +484,7 @@ main .slines span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
 .main-marq .strok .item h4 {
