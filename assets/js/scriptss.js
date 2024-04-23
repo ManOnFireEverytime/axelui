@@ -392,41 +392,16 @@ $(function () {
 });
 
 /* ===============================  Dark Mode  =============================== */
-
 $(function () {
-  function isLight() {
-    return localStorage.getItem("light-mode");
-  }
-
+  // Function to apply light mode
   function toggleRootClass() {
     document
       .querySelector("body:not(.business-home, .page-preview)")
-      .classList.toggle("light");
+      .classList.add("light");
   }
 
-  function toggleLocalStorageItem() {
-    if (isLight()) {
-      localStorage.removeItem("light-mode");
-      // Remove the "light" class when switching back to dark mode
-      document
-        .querySelector("body:not(.business-home, .page-preview)")
-        .classList.remove("light");
-    } else {
-      localStorage.setItem("light-mode", "set");
-      // Add the "light" class when switching to light mode
-      toggleRootClass();
-    }
-  }
-
-  // Check if light mode is set and apply it if true
-  if (isLight()) {
-    toggleRootClass();
-  }
-
-  // Add event listener to toggle between light and dark mode
-  document.querySelector(".theme-icon").addEventListener("click", () => {
-    toggleLocalStorageItem();
-  });
+  // Apply light mode by default
+  toggleRootClass();
 });
 
 // === window When Loading === //
