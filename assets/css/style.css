@@ -3617,7 +3617,7 @@ header .arrow-down {
   cursor: pointer;
   position: relative;
 }
-
+/* 
 .portfolio .filtering span:after {
   content: "/";
   position: absolute;
@@ -3627,22 +3627,26 @@ header .arrow-down {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: #fff;
-}
+} */
 
-.portfolio .filtering span:before {
+/* .portfolio .filtering span:before {
   content: attr(data-count);
   position: absolute;
   right: 25px;
   top: -20px;
   font-size: 12px;
-}
+} */
 
 .portfolio .filtering span:last-of-type:after {
   display: none;
 }
 
 .portfolio .filtering .active {
-  color: #3eadcf;
+  background: radial-gradient(100% 100% at 50% 0%, #0081f1 0%, #014282 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  border: 2px solid #000;
+  border-radius: 30px;
 }
 
 .portfolio .filtering .text {
@@ -4871,6 +4875,141 @@ header .arrow-down {
   overflow: hidden;
 }
 
+.splitting.animated .char {
+  -webkit-animation: fadeInUp 0.4s cubic-bezier(0.3, 0, 0.7, 1) both;
+  animation: fadeInUp 0.4s cubic-bezier(0.3, 0, 0.7, 1) both;
+  -webkit-animation-delay: calc(30ms * var(--char-index));
+  animation-delay: calc(30ms * var(--char-index));
+}
+
+.splitting .whitespace {
+  width: 5px;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes fadeInUpSm {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(7px);
+    transform: translateY(7px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUpSm {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(7px);
+    transform: translateY(7px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.splitting.txt.animated .char {
+  -webkit-animation: fadeIn 0.3s cubic-bezier(0.3, 0, 0.7, 1) both;
+  animation: fadeIn 0.3s cubic-bezier(0.3, 0, 0.7, 1) both;
+  -webkit-animation-delay: calc(10ms * var(--char-index));
+  animation-delay: calc(10ms * var(--char-index));
+}
+
+.splitting.txt .whitespace {
+  width: 5px;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.imago {
+  -webkit-clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+  clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+  -webkit-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  -webkit-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  position: relative;
+}
+
+.imago .inner {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+  position: relative;
+  z-index: 1;
+}
+
+.imago .inner.animated {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.imago.animated {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.sp-hover:hover .char {
+  -webkit-animation: fadeInUpSm 0.2s cubic-bezier(0.3, 0, 0.7, 1) both;
+  animation: fadeInUpSm 0.2s cubic-bezier(0.3, 0, 0.7, 1) both;
+  -webkit-animation-delay: calc(60ms * var(--char-index));
+  animation-delay: calc(60ms * var(--char-index));
+}
 .blog .item-img:hover .cont {
   top: 0;
 }
@@ -5058,7 +5197,7 @@ header .arrow-down {
 }
 
 .main-post .iner-img {
-  height: 400px;
+  height: 800px;
 }
 
 .main-post .iner-img img {
