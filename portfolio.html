@@ -39,6 +39,331 @@
     gtag("config", "G-HS4P951GY3");
   </script>
 
+  <style>
+    body {
+      background-color: #FFFFFF;
+    }
+
+    .hide {
+      /* You can play with the seconds to change the "animation" */
+      animation: hide .3s ease 0s 1 normal forwards;
+      transform-origin: center;
+    }
+
+    .show {
+      /* You can play with the seconds to change the "animation" */
+      animation: show .3s ease 0s 1 normal forwards;
+      transform-origin: center;
+    }
+
+    @keyframes hide {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(0);
+        width: 0;
+        height: 0;
+        margin: 0;
+      }
+    }
+
+    @keyframes show {
+      0% {
+        transform: scale(0);
+        width: 0;
+        height: 0;
+        margin: 0;
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .back-home {
+      z-index: 1;
+      position: absolute;
+
+    }
+
+    .filter {
+      display: flex;
+      justify-content: center;
+    }
+
+    .filters {
+      padding: 10px 20px;
+      margin: 0 5px;
+      text-align: center;
+      background: radial-gradient(100% 100% at 50% 0%, #0081F1 0%, #014282 100%);
+      -webkit-background-clip:
+        text;
+      color: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filters:hover {
+      transform: scale(1.1);
+      border: 2px solid #000;
+      border-radius: 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .filters {
+        display: flex;
+        margin-right: 200px;
+        /* Adjust for margin */
+      }
+
+      h4 {
+        font-size: 12px;
+      }
+
+    }
+
+    @media screen and (max-width: 1000px) {
+      .col2 {
+        order: -5 !important;
+        /* Make image appear first */
+        margin-bottom: 20px;
+        /* Add some space between image and text */
+      }
+
+      .col1 h2 {
+        padding-top: 20px;
+      }
+    }
+
+    .back-home a {
+      position: relative;
+      display: inline-block;
+      padding: 0 30px;
+    }
+
+    .back-home a:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: radial-gradient(100% 100% at 50% 0%, #0081F1 0%, #014282 100%);
+      border-radius: 100px;
+      z-index: -1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+    .back-home-c a:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: linear-gradient(135.34deg, #8380E0 12.86%, #B255E6 60.21%);
+      border-radius: 100px;
+      z-index: -1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+    .back-home-a a:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: radial-gradient(50% 50% at 50% 100%, rgba(21, 252, 174, 0.5) 0%, rgba(52, 45, 38, 0.5) 100%);
+
+      border-radius: 100px;
+      z-index: -1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+
+    .back-home-c a:hover:after {
+      width: 100%;
+    }
+
+    .back-home a:hover {
+      color: white;
+    }
+
+    .back-home-m a:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: #1E6F36;
+      border-radius: 100px;
+      z-index: -1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+
+    .back-home-al a:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: #571829;
+      border-radius: 100px;
+      z-index: -1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+    .back-home-fl a:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: #04491D;
+      border-radius: 100px;
+      z-index: -1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+    .back-home-to a:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: #F0420B;
+      border-radius: 100px;
+      z-index: -1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+    .back-home-ch a:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: #7783DC;
+      border-radius: 100px;
+      z-index: -1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+    .back-home-ar a:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: #333842;
+      border-radius: 100px;
+      z-index: -1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+    .back-home-r a:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: #002366;
+      border-radius: 100px;
+      z-index: -1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+    .back-home-n a:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 55px;
+      height: 55px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background: #C4942D;
+      border-radius: 100px;
+      z-index: -1;
+      -webkit-transition: all 0.4s;
+      -o-transition: all 0.4s;
+      transition: all 0.4s;
+    }
+
+    .back-home-m a:hover:after {
+      width: 100%;
+    }
+
+    .back-home a:hover:after {
+      width: 100%;
+    }
+
+    body:not(.light) .sub-bg2 {
+      background: #1d1f21 !important;
+    }
+  </style>
   <!-- <script>
         document.documentElement.className = "js";
         var supportsCssVars = function() {
@@ -115,14 +440,15 @@
             <a class="nav-link" href="contact.html"> Contact Us </a>
           </li>
         </ul>
-        <div class="nav-info-right d-flex align-items-center">
-          <div class="dark-mode-icon">
-            <button type="button" class="theme-icon">
-              <i aria-hidden="true" class="pe-7s-moon moon" title="Toggle between dark and light mode"></i>
-              <i aria-hidden="true" class="pe-7s-sun sun" title="Toggle between dark and light mode"></i>
-            </button>
-          </div>
-        </div>
+        <!-- <div class="nav-info-right d-flex align-items-center">
+                    <div class="dark-mode-icon">
+                        <button type="button" class="theme-icon">
+                            <i aria-hidden="true" class="pe-7s-moon moon"
+                                title="Toggle between dark and light mode"></i>
+                            <i aria-hidden="true" class="pe-7s-sun sun" title="Toggle between dark and light mode"></i>
+                        </button>
+                    </div>
+                </div> -->
       </div>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -141,463 +467,563 @@
 
     <!-- ==================== Start Slider ==================== -->
 
-    <header class="hed-clean valign full-height position-re">
+    <header class="hed-minml valign  position-re">
       <div class="container-xxl">
         <div class="row justify-content-center">
           <div class="col-lg-9 col-md-11">
             <div class="cont text-center">
-              <h1 class="fz-50 fw-700 mb-10">
-                The Flexibility and Originality you need to build innovative
-                digital experiences.
+              <h1 class="fz-40 fw-700 mb-10" style="color: #0D2D52 !important;">
+                The best solutions for the best Companies
               </h1>
-              <div class="circle-bord sml mt-40 cursor-pointer" data-scroll-nav="0">
-                <span class="loader-circle"></span>
-                <span class="loader-circle"></span>
-                <div class="arow-down carrow">
-                  <svg>
-                    <path
-                      d="M53.824 11.532a.5.5 0 01.352.936c-5.228 1.96-9.475 5.555-12.752 10.797a.5.5 0 01-.848-.53c3.39-5.424 7.81-9.163 13.248-11.203z">
-                    </path>
-                    <path
-                      d="M53.824 12.468a.5.5 0 00.352-.936C48.948 9.572 44.7 5.978 41.424.735a.5.5 0 00-.848.53c3.39 5.424 7.81 9.163 13.248 11.203z">
-                    </path>
-                    <path d="M54 12.5a.5.5 0 100-1H1a.5.5 0 100 1h53z"></path>
-                  </svg>
-                </div>
-              </div>
+              <p>We design, craft, and build websites, products, & AI solutions that convert
+                ideas into results and success stories for businesses and organizations.</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="bg-pattern2 opacity-2 bg-img parallaxie" data-background="assets/img/portfolio2.png"></div>
+      <!-- <div class="bg-pattern2 opacity-2 bg-img parallaxie" data-background="assets/img/hero3.png"></div> -->
     </header>
 
     <!-- ==================== End Slider ==================== -->
-    <section class="number-sec section-padding" data-scroll-index="0">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="item sm-mb50">
-              <span class="icon opacity-7 pe-7s-rocket"></span>
-              <h6 class="" style="color: #3eadcf">
-                <span class="">Innovation</span>
-              </h6>
-              <p class="wow txt" data-splitting>
-                We are an innovation-driven company that provide solutions to
-                our clients. Our approach involves teams of experts in various
-                technological fields.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="item sm-mb50">
-              <span class="icon opacity-7 pe-7s-star"></span>
-              <h6 class="" style="color: #ff8383">
-                <span class="">Accuracy</span>
-              </h6>
-              <p class="wow txt" data-splitting>
-                Our solutions to clients problems and the quality of work we
-                deliver on each project is done with 100% accuracy.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="item">
-              <span class="icon opacity-7 pe-7s-cup"></span>
-              <h6 class="" style="color: #8c52ff">
-                <span class="">Top-Notch</span>
-              </h6>
-              <p class="wow txt" data-splitting>
-                At Axel Cyber, we are upper echelon, hence we only provide
-                top-notch services to our clients and service users.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ==================== End Slider ==================== -->
-    <section class="serv-bg-box toup-100" style="padding-top: 100px">
-      <div class="container-xxl">
+
+    <section class="portfolio section-padding pb-80">
+      <div class="container-fluid">
+
         <div class="row">
-          <div class="col-lg-7">
-            <div class="sec-head mb-80 align-content-center">
-              <h3 class="fw-800">
-                <span class="" style="color: #0067f5">Portfolio</span>
-              </h3>
+          <!-- filter links -->
+          <div class="filtering col-12 mb-80 text-center">
+            <div class="filter text-center">
+              <div>
+                <span class="filters" data-filter='all' class='active'>
+                  <h4>All</h4>
+                </span>
+                <span class="filters" data-filter='web'>
+                  <h4>Websites</h4>
+                </span>
+                <span class="filters" data-filter='app'>
+                  <h4>Mobile & Web Apps</h4>
+                </span>
+                <span class="filters" data-filter='ai'>
+                  <h4 class="">AI Solutions</h4>
+                </span>
+              </div>
+
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 item current d-flex align-items-end" data-tab="tab-1">
-            <div class="cont">
-              <h5 class="fw-700">Coming Soon</h5>
-              <!-- <p>
-                  Creating a higher spacing and how people move through a unique
-                  and impactful campaign.
-                </p> -->
-              <!-- <span class="more mt-30" style="color: #0067f5">
-                  <a href="fullstack.html">View Project</a>
-                </span> -->
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 item d-flex align-items-end" data-tab="tab-2">
-            <div class="cont">
-              <h5 class="fw-700">Coming Soon</h5>
-              <!-- <p>
-                  Get a regulatory oneven an enterprises such she and the got
-                  the did attributing and pushed.
-                </p> -->
-              <!-- <span class="more mt-30" style="color: #0067f5">
-                  <a href="uiux.html">View Project</a>
-                </span> -->
-            </div>
-          </div>
-          <div class="col-lg-4 item d-flex align-items-end" data-tab="tab-3">
-            <div class="cont">
-              <h5 class="fw-700">Coming Soon</h5>
-              <!-- <p>
-                  Spaces of each debt in the digital world can help you with
-                  overall simplest authentic.
-                </p>
-                <span class="more mt-30" style="color: #0067f5">
-                  <a href="video.html">View Project</a>
-                </span> -->
-            </div>
-          </div>
-          <div class="col-12 chan-img" data-overlay-dark="5">
-            <div class="img bg-img current" id="tab-1" data-background="assets/img/works/fullstack.jpg"></div>
-            <div class="img bg-img" id="tab-2" data-background="assets/img/works/uiux.jpg"></div>
-            <div class="img bg-img" id="tab-3" data-background="assets/img/works/video.jpg"></div>
           </div>
         </div>
       </div>
     </section>
+    <div class="projects">
 
-    <!-- <section class="slider slider-prlx box-slide">
-        <div class="swiper-container parallax-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div
-                class="bg-img valign"
-                data-background="assets/img/works/fullstack.jpg"
-                data-overlay-dark="6"
-              >
-                <div class="container">
-                  <div class="row justify-content-center">
-                    <div class="col-lg-8 col-md-10">
-                      <div class="caption text-center">
-                        <h1 class="fw-700">Dev Team</h1>
-                        <div class="mt-40">
-                          <a href="fullstack.html" class="butn butn-bg butn-lg">
-                            <span class="fw-600 fz-12 text-u ls1 text-dark"
-                              >View Projects</span
-                            >
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+      <section class="intro-box pb-40 project" data-filter='ai'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #F7F9FD;">
+          <div class="row">
+
+            <div class="col-lg-6" style="position: relative;">
+              <div class="bg-img  text-center" style="background: radial-gradient(100% 100% at 50% 0%, #0081F1 0%, #014282 100%); display:
+                            flex; align-items: center; justify-content: center; border-radius: 20px;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/plumber.png" alt="Plumber Image"
+                    style="max-width: 100%; max-height: 100%; z-index: 1;">
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
-              <div
-                class="bg-img valign"
-                data-background="assets/img/works/uiux.jpg"
-                data-overlay-dark="6"
-              >
-                <div class="container">
-                  <div class="row justify-content-center">
-                    <div class="col-lg-8 col-md-10">
-                      <div class="caption text-center">
-                        <h1 class="fw-700">Design Team</h1>
-                        <div class="mt-40">
-                          <a href="uiux.html" class="butn butn-bg butn-lg">
-                            <span class="fw-600 fz-12 text-u ls1 text-dark"
-                              >View Projects</span
-                            >
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div
-                class="bg-img valign"
-                data-background="assets/img/works/video.jpg"
-                data-overlay-dark="6"
-              >
-                <div class="container">
-                  <div class="row justify-content-center">
-                    <div class="col-lg-8 col-md-10">
-                      <div class="caption text-center">
-                        <h1 class="fw-700">Video Editing Team</h1>
-                        <div class="mt-40">
-                          <a href="video.html" class="butn butn-bg butn-lg">
-                            <span class="fw-600 fz-12 text-u ls1 text-dark"
-                              >View Projects</span
-                            >
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            <div class="col-lg-6 col1">
+              <div class="cont md-mb50">
+                <h2 class="" style="background: radial-gradient(100% 100% at 50% 0%, #0081F1 0%, #014282 100%); -webkit-background-clip:
+                                text;
+                                color: transparent;">Prompt Plumber AI</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">A prompt
+                  generating website. An AI based
+                  webapp
+                  for generating prompts </p>
+                <div class="back-home sub-title fw-700 mb-0" style="position: absolute; bottom: 60px;">
+                  <a href="plumber.html" class="" style="display: inline-block;">
+                    View Project
+                  </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- slider setting
-          <div class="setone">
-            <div
-              class="swiper-button-next swiper-nav-ctrl next-ctrl cursor-pointer"
-            >
-              <i class="fas fa-chevron-right"></i>
-            </div>
-            <div
-              class="swiper-button-prev swiper-nav-ctrl prev-ctrl cursor-pointer"
-            >
-              <i class="fas fa-chevron-left"></i>
-            </div>
-          </div>
-        </div>
-      </section>-->
 
-    <!-- ==================== Start Portfolio ==================== -->
 
-    <section class="portfolio section-padding pb-90">
-      <div class="container-xxl">
-        <div class="row">
-          <div class="col-lg-7">
-            <div class="sec-head mb-80">
-              <h3 class="fw-800"><span class="stroke">Our</span> Works</h3>
-            </div>
-          </div>
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
         </div>
 
-        <!-- <div class="gallery sam-height">
-            <div class="row">
-              <div class="col-lg-4 col-md-6 items info-shadow mb-40">
-                <div class="item-img">
-                  <a href="project-details.html" class="imagee wow">
-                    <div class="inner wow">
-                      <img
-                        src="assets/img/works/4/1.jpg"
-                        alt="image"
-                        class="radius-5"
-                      />
-                    </div>
+      </section>
+      <section class="intro-box pb-40 project" data-filter='ai'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #F6FFF5;">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="cont md-mb50">
+                <h2 class="" style="background: radial-gradient(50% 50% at 50% 100%, rgba(21, 252, 174, 0.5) 0%, rgba(52, 45, 38, 0.5) 100%);
+ -webkit-background-clip:
+                                text;
+                                color: transparent;">Aurora AI</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">A prompt
+                  generating website. An AI based webapp for generating prompts </p>
+                <div class="back-home back-home-a sub-title fw-700 mb-0" style="position: absolute; bottom: 60px;">
+                  <a href="aurora.html" class="" style="display: inline-block;">
+                    View Project
                   </a>
-                  <div class="info">
-                    <h6><a href="project-details.html">Character Design</a></h6>
-                    <span class="sub-title tag opacity-7 mb-0 mt-10"
-                      ><a href="project-details.html">Design ART</a></span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-8 col-md-6 items info-shadow mb-40">
-                <div class="item-img">
-                  <a href="project-details.html" class="imagee wow">
-                    <div class="inner wow">
-                      <img
-                        src="assets/img/works/4/h1.jpg"
-                        alt="image"
-                        class="radius-5"
-                      />
-                    </div>
-                  </a>
-                  <div class="info">
-                    <h6><a href="project-details.html">Character Design</a></h6>
-                    <span class="sub-title tag opacity-7 mb-0 mt-10"
-                      ><a href="project-details.html">Design ART</a></span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 items info-shadow mb-40">
-                <div class="item-img">
-                  <a href="project-details.html" class="imagee wow">
-                    <div class="inner wow">
-                      <img
-                        src="assets/img/works/4/3.jpg"
-                        alt="image"
-                        class="radius-5"
-                      />
-                    </div>
-                  </a>
-                  <div class="info">
-                    <h6><a href="project-details.html">Character Design</a></h6>
-                    <span class="sub-title tag opacity-7 mb-0 mt-10"
-                      ><a href="project-details.html">Design ART</a></span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 items info-shadow mb-40">
-                <div class="item-img">
-                  <a href="project-details.html" class="imagee wow">
-                    <div class="inner wow">
-                      <img
-                        src="assets/img/works/4/4.jpg"
-                        alt="image"
-                        class="radius-5"
-                      />
-                    </div>
-                  </a>
-                  <div class="info">
-                    <h6><a href="project-details.html">Character Design</a></h6>
-                    <span class="sub-title tag opacity-7 mb-0 mt-10"
-                      ><a href="project-details.html">Design ART</a></span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 items info-shadow mb-40">
-                <div class="item-img">
-                  <a href="project-details.html" class="imagee wow">
-                    <div class="inner wow">
-                      <img
-                        src="assets/img/works/4/5.jpg"
-                        alt="image"
-                        class="radius-5"
-                      />
-                    </div>
-                  </a>
-                  <div class="info">
-                    <h6><a href="project-details.html">Character Design</a></h6>
-                    <span class="sub-title tag opacity-7 mb-0 mt-10"
-                      ><a href="project-details.html">Design ART</a></span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-8 col-md-6 items info-shadow mb-40">
-                <div class="item-img">
-                  <a href="project-details.html" class="imagee wow">
-                    <div class="inner wow">
-                      <img
-                        src="assets/img/works/4/h2.jpg"
-                        alt="image"
-                        class="radius-5"
-                      />
-                    </div>
-                  </a>
-                  <div class="info">
-                    <h6><a href="project-details.html">Character Design</a></h6>
-                    <span class="sub-title tag opacity-7 mb-0 mt-10"
-                      ><a href="project-details.html">Design ART</a></span
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-6 items info-shadow mb-40">
-                <div class="item-img">
-                  <a href="project-details.html" class="imagee wow">
-                    <div class="inner wow">
-                      <img
-                        src="assets/img/works/4/6.jpg"
-                        alt="image"
-                        class="radius-5"
-                      />
-                    </div>
-                  </a>
-                  <div class="info">
-                    <h6><a href="project-details.html">Character Design</a></h6>
-                    <span class="sub-title tag opacity-7 mb-0 mt-10"
-                      ><a href="project-details.html">Design ART</a></span
-                    >
-                  </div>
                 </div>
               </div>
             </div>
-          </div> -->
-      </div>
-    </section>
+            <div class="col-lg-6 col2" style="position: relative;">
+              <div class="bg-img bg-imgs text-center" style="border-radius: 20px; background: 
+radial-gradient(50% 50% at 50% 100%, rgba(21, 252, 174, 0.5) 0%, rgba(52, 45, 38, 0.5) 100%);
+ display:
+                            flex; align-items: center; justify-content: center;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/aurora.png" alt="Plumber Image"
+                    style="max-width: 100%; max-height: 100%; z-index: 1;">
+                </div>
+              </div>
+            </div>
 
+          </div>
+
+
+
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
+        </div>
+
+      </section>
+      <section class="intro-box pb-40 project" data-filter='app'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #F8F8FF;">
+          <div class="row">
+
+            <div class="col-lg-6" style="position: relative;">
+              <div class="bg-img  text-center" style="border-radius: 20px; background: white; display:
+                            flex; align-items: center; justify-content: center;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/crybit.png" style="max-width: 100%; max-height: 100%; z-index: 1;">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col1">
+              <div class="cont md-mb50">
+                <h2 class="" style="background: linear-gradient(135.34deg, #8380E0 12.86%, #B255E6 60.21%);
+ -webkit-background-clip:
+                                text;
+                                color: transparent;">Crybit</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">A
+                  cryptocurrency
+                  application for buying , selling and trading crypto </p>
+                <div class="back-home sub-title fw-700 mb-0 back-home-c" style="position: absolute; bottom: 60px;">
+                  <a href="crybit.html" class="" style="display: inline-block;">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
+        </div>
+
+      </section>
+      <section class="intro-box pb-40 project" data-filter='app'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #E6E9F0;">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="cont md-mb50">
+                <h2 class="" style="background: #002366; -webkit-background-clip: text;
+                                color: transparent;">Prompt Guardian</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">An Ecommerce
+                  mobile application for shopping all kinds of products </p>
+                <div class="back-home back-home-r sub-title fw-700 mb-0" style="position: absolute; bottom: 60px;">
+                  <a href="guardian.html" class="" style="display: inline-block;">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col2" style="position: relative;">
+              <div class="bg-img  text-center" style="border-radius: 20px; background: #002366;
+
+ display:
+                            flex; align-items: center; justify-content: center;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/guardian/1.png" alt="Plumber Image"
+                    style="max-width: 100%; max-height: 100%; z-index: 1;">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
+        </div>
+
+      </section>
+      <section class="intro-box pb-40 project" data-filter='web'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #F8F8FF;">
+          <div class="row">
+
+            <div class="col-lg-6" style="position: relative;">
+              <div class="bg-img  text-center" style="border-radius: 20px; background: #1E6F36; display:
+                            flex; align-items: center; justify-content: center;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/moniak.png" style="max-width: 100%; max-height: 100%; z-index: 1;">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col1">
+              <div class="cont md-mb50">
+                <h2 class="" style=" background: #1E6F36;
+ -webkit-background-clip:
+                                text;
+                                color: transparent;">MoniAK company website</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">A
+                  cryptocurrency
+                  application for buying , selling and trading crypto </p>
+                <div class="back-home sub-title fw-700 mb-0 back-home-m" style="position: absolute; bottom: 60px;">
+                  <a href="moniak.html" class="" style="display: inline-block;">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
+        </div>
+
+      </section>
+      <section class="intro-box pb-40 project" data-filter='web'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #FFFCF6;">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="cont md-mb50">
+                <h2 class="" style="background: #C4942D;
+ -webkit-background-clip:
+                                text;
+                                color: transparent;">Nexant Company Website</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">An Ecommerce
+                  mobile application for shopping all kinds of products </p>
+                <div class="back-home back-home-n sub-title fw-700 mb-0" style="position: absolute; bottom: 60px;">
+                  <a href="nexant.html" class="" style="display: inline-block;">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col2" style="position: relative;">
+              <div class="bg-img  text-center" style="border-radius: 20px; background: #C4942D;
+ display:
+                            flex; align-items: center; justify-content: center;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/nexant.png" alt="Plumber Image"
+                    style="max-width: 100%; max-height: 100%; z-index: 1;">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
+        </div>
+
+      </section>
+      <section class="intro-box pb-40 project" data-filter='web'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #FCEEF0;">
+          <div class="row">
+
+            <div class="col-lg-6" style="position: relative;">
+              <div class="bg-img  text-center" style="border-radius: 20px; background: #571829; display:
+                            flex; align-items: center; justify-content: center;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/aloma/1.png" style="max-width: 100%; max-height: 100%; z-index: 1;">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col1">
+              <div class="cont md-mb50">
+                <h2 class="" style=" background: #571829;
+ -webkit-background-clip:
+                                text;
+                                color: transparent;">Aloma Blog</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">A
+                  cryptocurrency
+                  application for buying , selling and trading crypto </p>
+                <div class="back-home sub-title fw-700 mb-0 back-home-al" style="position: absolute; bottom: 60px;">
+                  <a href="aloma.html" class="" style="display: inline-block;">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
+        </div>
+
+      </section>
+      <section class="intro-box pb-40 project" data-filter='web'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #EAF4EF;">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="cont md-mb50">
+                <h2 class="" style="background: #04491D;
+ -webkit-background-clip:
+                                text;
+                                color: transparent;">Fleetwaters Farms</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">An Ecommerce
+                  mobile application for shopping all kinds of products </p>
+                <div class="back-home back-home-fl sub-title fw-700 mb-0" style="position: absolute; bottom: 60px;">
+                  <a href="fleetwaters.html" class="" style="display: inline-block;">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col2" style="position: relative;">
+              <div class="bg-img  text-center" style="border-radius: 20px; background: #04491D;
+ display:
+                            flex; align-items: center; justify-content: center;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/fleetwater/fleetwater1.png" alt="Plumber Image"
+                    style="max-width: 100%; max-height: 100%; z-index: 1;">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
+        </div>
+
+      </section>
+
+      <section class="intro-box pb-40 project" data-filter='web'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #FCECE8;">
+          <div class="row">
+
+            <div class="col-lg-6" style="position: relative;">
+              <div class="bg-img  text-center" style="border-radius: 20px; background: #F0420B; display:
+                            flex; align-items: center; justify-content: center;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/tobyteq/tobyteq1.png" style="max-width: 100%; max-height: 100%; z-index: 1;">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col1">
+              <div class="cont md-mb50">
+                <h2 class="" style=" background: #F0420B;
+ -webkit-background-clip:
+                                text;
+                                color: transparent;">Tobyteq Website</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">A
+                  cryptocurrency
+                  application for buying , selling and trading crypto </p>
+                <div class="back-home sub-title fw-700 mb-0 back-home-to" style="position: absolute; bottom: 60px;">
+                  <a href="tobyteq.html" class="" style="display: inline-block;">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
+        </div>
+
+      </section>
+      <section class="intro-box pb-40 project" data-filter='web'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #EEF0FB;">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="cont md-mb50">
+                <h2 class="" style="background: #7783DC;
+ -webkit-background-clip:
+                                text;
+                                color: transparent;">Chedar Website</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">An Ecommerce
+                  mobile application for shopping all kinds of products </p>
+                <div class="back-home back-home-ch sub-title fw-700 mb-0" style="position: absolute; bottom: 60px;">
+                  <a href="chedar.html" class="" style="display: inline-block;">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col2" style="position: relative;">
+              <div class="bg-img  text-center" style="border-radius: 20px; background: #7783DC;
+ display:
+                            flex; align-items: center; justify-content: center;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/chedar/chedar1.png" alt="Plumber Image"
+                    style="max-width: 100%; max-height: 100%; z-index: 1;">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
+        </div>
+
+      </section>
+
+      <section class="intro-box pb-40 project" data-filter='web'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #E5E6E8;">
+          <div class="row">
+
+            <div class="col-lg-6" style="position: relative;">
+              <div class="bg-img  text-center" style="border-radius: 20px; background: #333842; display:
+                            flex; align-items: center; justify-content: center;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/armt/armt1.png" style="max-width: 100%; max-height: 100%; z-index: 1;">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col1">
+              <div class="cont md-mb50">
+                <h2 class="" style=" background: #333842;
+ -webkit-background-clip:
+                                text;
+                                color: transparent;">ARMT Website</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">
+                  A
+                  cryptocurrency
+                  application for buying , selling and trading crypto </p>
+                <div class="back-home sub-title fw-700 mb-0 back-home-ar" style="position: absolute; bottom: 60px;">
+                  <a href="armt.html" class="" style="display: inline-block;">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
+        </div>
+
+      </section>
+      <section class="intro-box pb-40 project" data-filter='web'>
+        <div class="container-xxl sub-bg2 position-re"
+          style="border-radius: 20px; padding: 40px; background-color: #E5E6E8;">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="cont md-mb50">
+                <h2 class="" style="background: #333842;
+ -webkit-background-clip:
+                                text;
+                                color: transparent;">ARMT Website CMS</h2>
+                <p class="wow fadeInUp pb-20" data-wow-delay=".5s" style="font-size: 26px;">
+                  An Ecommerce
+                  mobile application for shopping all kinds of products </p>
+                <div class="back-home back-home-ar sub-title fw-700 mb-0" style="position: absolute; bottom: 60px;">
+                  <a href="armt-cms.html" class="" style="display: inline-block;">
+                    View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col2" style="position: relative;">
+              <div class="bg-img  text-center" style="border-radius: 20px; background: #333842;
+ display:
+                            flex; align-items: center; justify-content: center;">
+                <div style="padding: 30px;">
+                  <!-- Adjust padding as needed -->
+                  <img src="assets/img/cms/cms1.png" alt="Plumber Image"
+                    style="max-width: 100%; max-height: 100%; z-index: 1;">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
+
+          <div class="bg-pattern2 bg-img" data-background="assets/img/pattern2.png"></div>
+        </div>
+
+      </section>
+    </div>
     <!-- ==================== End Portfolio ==================== -->
 
-    <!-- ==================== Start clients Brands ==================== -->
-
-    <section class="clients just-bord" style="padding-bottom: 50px">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-6 valign text-center">
-            <div class="full-width">
-              <h6 class="sub-title mb-0 wow" data-splitting>Our Clients</h6>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 brands">
-            <div class="item wow fadeIn" data-wow-delay=".6s">
-              <div class="img">
-                <img src="assets/img/brands/02.png" alt="" />
-              </div>
-              <a href="#0" class="link" data-splitting>www.axelcyber.com</a>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 brands">
-            <div class="item wow fadeIn" data-wow-delay=".8s">
-              <div class="img">
-                <img src="assets/img/brands/03.png" alt="" />
-              </div>
-              <a href="#0" class="link" data-splitting>www.axelcyber.com</a>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 brands">
-            <div class="item wow fadeIn" data-wow-delay=".3s">
-              <div class="img">
-                <img src="assets/img/brands/04.png" alt="" />
-              </div>
-              <a href="#0" class="link" data-splitting>www.axelcyber.com</a>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 brands">
-            <div class="item wow fadeIn" data-wow-delay=".4s">
-              <div class="img">
-                <img src="assets/img/brands/05.png" alt="" />
-              </div>
-              <a href="#0" class="link" data-splitting>www.axelcyber.com</a>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 brands">
-            <div class="item wow fadeIn" data-wow-delay=".7s">
-              <div class="img">
-                <img src="assets/img/brands/06.png" alt="" />
-              </div>
-              <a href="#0" class="link" data-splitting>www.axelcyber.com</a>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 brands">
-            <div class="item wow fadeIn" data-wow-delay=".5s">
-              <div class="img">
-                <img src="assets/img/brands/07.png" alt="" />
-              </div>
-              <a href="#0" class="link" data-splitting>www.axelcyber.com</a>
-            </div>
-          </div>
-          <div class="col-md-3 col-6 valign text-center">
-            <div class="full-width">
-              <h6 class="sub-title main-color mb-0 wow" data-splitting>
-                <a href="contact.html">Become a Client <i class="pe-7s-angle-right"></i></a>
-              </h6>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== End clients Brands ==================== -->
   </main>
 
   <!-- ==================== Start Footer ==================== -->
@@ -609,7 +1035,8 @@
           <div class="cal md-mb50">
             <h3 class="fw-800">
               We are Upper Echelon
-              <span class="mt-10 l-block"><a href="contact.html"><span class="stroke ls5">Contact us</span>.</a>
+              <span class="mt-10 l-block"><a href="contact.html"><span class="stroke ls5">Contact
+                    us</span>.</a>
               </span>
             </h3>
           </div>
@@ -668,14 +1095,47 @@
   <!-- ==================== End Footer ==================== -->
 
   <!-- jQuery -->
+
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/jquery-migrate-3.4.0.min.js"></script>
 
   <!-- plugins -->
+  <script>
+    const filters = document.querySelectorAll('.filters');
+
+    filters.forEach(filter => {
+
+      filter.addEventListener('click', function () {
+
+        let selectedFilter = filter.getAttribute('data-filter');
+        let itemsToHide = document.querySelectorAll(
+          `.projects .project:not([data-filter='${selectedFilter}'])`);
+        let itemsToShow = document.querySelectorAll(
+          `.projects [data-filter='${selectedFilter}']`);
+
+        if (selectedFilter == 'all') {
+          itemsToHide = [];
+          itemsToShow = document.querySelectorAll('.projects [data-filter]');
+        }
+
+        itemsToHide.forEach(el => {
+          el.classList.add('hide');
+          el.classList.remove('show');
+        });
+
+        itemsToShow.forEach(el => {
+          el.classList.remove('hide');
+          el.classList.add('show');
+        });
+
+      });
+    });
+  </script>
+  <script src="assets/js/scriptss.js"></script>
   <script src="assets/js/plugins.js"></script>
 
   <!-- custom scripts -->
-  <script src="assets/js/scripts.js"></script>
+
 
   <script src="assets/js/imagesloaded.pkgd.min.js"></script>
   <script src="assets/js/three.min.js"></script>
