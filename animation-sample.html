@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Plugins -->
+    <!-- <link rel="stylesheet" href="assets/css/plugins3.css" /> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        .aos-animate {
+            opacity: 1;
+        }
+
+        .slide-in-left {
+            transform: translateX(-100%);
+        }
+
+        .slide-in-right {
+            transform: translateX(100%);
+        }
+
+        .service-item {
+            opacity: 0;
+            transition: opacity 0.5s;
+
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            color: white;
+            margin-bottom: 200px;
+        }
+
+        .box1 {
+            background-color: #3498db;
+            border-radius: 15px;
+        }
+
+        .box2 {
+            background-color: #e74c3c;
+            border: 5px solid #c0392b;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .box3 {
+            background-color: #2ecc71;
+            border: 5px solid #c0392b;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .box4 {
+            background: linear-gradient(45deg, #8e44ad, #3498db);
+            border: 2px dashed #9b59b6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1 slide-in-left" data-aos="fade-right">Box 1</div>
+    <div class="box box2 slide-in-right" data-aos="fade-left">Box 2</div>
+    <div class="box box3 slide-in-left" data-aos="fade-right">Box 3</div>
+    <div class="box box4 slide-in-right" data-aos="fade-left">Box 4</div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                duration: 800, // Animation duration
+                easing: 'ease-in-out', // Easing for animation
+                mirror: false, // Whether elements should animate out while scrolling past them
+                offset: 100, // Offset (in px) from the original trigger point
+                once: true // Whether animation should happen only once - while scrolling down
+            });
+        });
+    </script>
+</body>
+
+</html>

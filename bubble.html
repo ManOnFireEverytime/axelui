@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Pop Animation with Scrolling</title>
+    <script src="https://kit.fontawesome.com/728233ce08.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .content {
+            height: 200vh;
+            /* Make the page scrollable */
+            padding: 20px;
+        }
+
+        .icon-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .icon {
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+            color: #571829;
+            pointer-events: auto;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Scroll down to see the effect</h1>
+        <p>The icons will appear after 30 seconds and continue for 10 seconds.</p>
+        <!-- Add more content here to make the page scrollable -->
+    </div>
+    <div class="icon-container"></div>
+
+    <script>
+        let iconInterval;
+        const iconContainer = document.querySelector('.icon-container');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(startIcons, 3000);
+        });
+
+        function startIcons() {
+            iconInterval = setInterval(createIcon, 1000);
+            setTimeout(stopIcons, 10000);
+        }
+
+        function stopIcons() {
+            clearInterval(iconInterval);
+        }
+
+        function createIcon() {
+            const icon = document.createElement('i');
+            icon.classList.add('icon', 'fas', 'fa-circle');
+
+            const size = Math.random() * 50 + 20;
+            icon.style.fontSize = `${size}px`;
+
+            icon.style.left = `${Math.random() * (window.innerWidth - size)}px`;
+            icon.style.top = `${window.innerHeight}px`;
+
+            iconContainer.appendChild(icon);
+
+            animateIcon(icon);
+
+            icon.addEventListener('click', () => {
+                icon.style.transform = 'scale(1.5)';
+                icon.style.opacity = '0';
+                setTimeout(() => icon.remove(), 300);
+            });
+        }
+
+        function animateIcon(icon) {
+            let posY = window.innerHeight;
+            const speed = Math.random() * 0.5 + 0.2;
+
+            function move() {
+                posY -= speed;
+                icon.style.top = `${posY}px`;
+
+                if (posY > -parseFloat(icon.style.fontSize)) {
+                    requestAnimationFrame(move);
+                } else {
+                    icon.remove();
+                }
+            }
+
+            requestAnimationFrame(move);
+        }
+    </script>
+</body>
+
+</html>
