@@ -41,6 +41,42 @@
     </script>
 
     <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(100% 100% at 50% 0%, #0081F1 0%, #014282 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: all 3s ease-in-out;
+        }
+
+        .preloader-text {
+            font-size: 3rem;
+            color: #ffffff;
+            font-weight: bold;
+            transform-origin: top left;
+            animation: angled-fall 3s ease-in-out forwards;
+        }
+
+        @keyframes angled-fall {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(30deg);
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(30deg);
+            }
+        }
+
         .hide {
             /* You can play with the seconds to change the "animation" */
             animation: hide .3s ease 0s 1 normal forwards;
@@ -292,6 +328,10 @@
         }
 
         @media screen and (max-width: 1000px) {
+            .preloader-text {
+                font-size: large;
+            }
+
             .col2 {
                 order: -5 !important;
                 /* Make image appear first */
@@ -476,6 +516,9 @@
 </head>
 
 <body class="loading" style="background: #EAEBEB">
+    <div class="preloader">
+        <div class="preloader-text">Prompt Plumber</div>
+    </div>
     <!-- ==================== Start progress-scroll-button ==================== -->
 
     <div class="progress-wrap cursor-pointer">
@@ -851,7 +894,16 @@
     <!-- ==================== End Footer ==================== -->
 
     <!-- jQuery -->
-
+    <!-- jQuery -->
+    <script>
+        window.addEventListener('load', function () {
+            const preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 4000);
+        });
+    </script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/jquery-migrate-3.4.0.min.js"></script>
 
