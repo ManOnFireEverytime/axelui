@@ -2027,23 +2027,19 @@ THREE.Projector = function () {
     }
   }
 };
-
 if ($("#home_wave").length > 0) {
   var SEPARATION = 200,
-    AMOUNTX = 40,
-    AMOUNTY = 60;
-  var container, stats;
+    AMOUNTX = 30,
+    AMOUNTY = 30;
+  var container;
   var camera, scene, renderer;
-
-  var particles,
-    particle,
-    count = 0;
-
+  var particles, particle;
   var mouseX = 0,
     mouseY = 0;
-
   var windowHalfX = window.innerWidth / 2;
   var windowHalfY = window.innerHeight / 2;
+  var isDarkMode = true; // Set this based on your current mode
+  var darkModeSprite, lightModeSprite;
 
   init();
   animate();
@@ -2053,95 +2049,128 @@ function init() {
   container = $("#home_wave");
 
   camera = new THREE.PerspectiveCamera(
-    65,
+    75,
     window.innerWidth / window.innerHeight,
     1,
     10000
   );
-  camera.position.z = 10000;
+  camera.position.z = 1000;
 
   scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0x223843, 2000, 10000);
 
   particles = new Array();
 
-  var PI2 = Math.PI * 2;
-  var material = new THREE.SpriteCanvasMaterial({
-    color: 0xffffff,
-    program: function (context) {
-      context.beginPath();
-      context.arc(0, 0, 0.5, 0, PI2, true);
-      context.fill();
-    },
+  var geometry = new THREE.Geometry();
+  darkModeSprite = new THREE.CanvasTexture(generateSprite("dark"));
+  lightModeSprite = new THREE.CanvasTexture(generateSprite("light"));
+
+  var material = new THREE.PointsMaterial({
+    size: 5,
+    map: isDarkMode ? darkModeSprite : lightModeSprite,
+    blending: THREE.AdditiveBlending,
+    depthTest: false,
+    transparent: true,
   });
 
   var i = 0;
-
   for (var ix = 0; ix < AMOUNTX; ix++) {
     for (var iy = 0; iy < AMOUNTY; iy++) {
-      particle = particles[i++] = new THREE.Sprite(material);
-      particle.position.x = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
-      particle.position.z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
-      scene.add(particle);
+      particle = particles[i++] = new THREE.Vector3();
+      particle.x = Math.random() * 2000 - 1000;
+      particle.y = Math.random() * 2000 - 1000;
+      particle.z = Math.random() * 2000 - 1000;
+      particle.velocity = new THREE.Vector3(0, -Math.random() * 0.5, 0);
+      geometry.vertices.push(particle);
     }
   }
 
-  renderer = new THREE.CanvasRenderer({
-    alpha: true,
-  });
+  var pointSystem = new THREE.Points(geometry, material);
+  scene.add(pointSystem);
+
+  renderer = new THREE.WebGLRenderer({ alpha: true });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setClearColor(scene.fog.color);
+  renderer.setClearColor(0x000000, 0);
   container.append(renderer.domElement);
 
-  //stats = new Stats();
-  //stats.domElement.style.position = 'absolute';
-  //stats.domElement.style.top = '0px';
-  //container.appendChild( stats.domElement );
-
-  //
-
+  document.addEventListener("mousemove", onDocumentMouseMove, false);
   window.addEventListener("resize", onWindowResize, false);
+}
+
+function generateSprite(mode) {
+  var canvas = document.createElement("canvas");
+  canvas.width = 16;
+  canvas.height = 16;
+  var context = canvas.getContext("2d");
+  var gradient = context.createRadialGradient(
+    canvas.width / 2,
+    canvas.height / 2,
+    0,
+    canvas.width / 2,
+    canvas.height / 2,
+    canvas.width / 2
+  );
+
+  if (mode === "dark") {
+    gradient.addColorStop(0, "rgba(255,255,255,1)");
+    gradient.addColorStop(0.2, "rgba(150,150,255,1)");
+    gradient.addColorStop(0.4, "rgba(0,0,64,1)");
+    gradient.addColorStop(1, "rgba(0,0,0,0)");
+  } else {
+    gradient.addColorStop(0, "rgba(0,0,0,1)");
+    gradient.addColorStop(0.2, "rgba(20,20,64,1)");
+    gradient.addColorStop(0.4, "rgba(200,200,255,1)");
+    gradient.addColorStop(1, "rgba(255,255,255,0)");
+  }
+
+  context.fillStyle = gradient;
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  return canvas;
+}
+
+function onDocumentMouseMove(event) {
+  mouseX = event.clientX - windowHalfX;
+  mouseY = event.clientY - windowHalfY;
 }
 
 function onWindowResize() {
   windowHalfX = window.innerWidth / 2;
   windowHalfY = window.innerHeight / 2;
-
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
-
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-//
-
-//
-
 function animate() {
   requestAnimationFrame(animate);
-
   render();
-  //stats.update();
 }
 
 function render() {
-  camera.position.set(0, 355, 122);
+  var time = Date.now() * 0.00005;
 
-  var i = 0;
+  camera.position.x += (mouseX - camera.position.x) * 0.05;
+  camera.position.y += (-mouseY - camera.position.y) * 0.05;
+  camera.lookAt(scene.position);
 
-  for (var ix = 0; ix < AMOUNTX; ix++) {
-    for (var iy = 0; iy < AMOUNTY; iy++) {
-      particle = particles[i++];
-      particle.position.y =
-        Math.sin((ix + count) * 0.3) * 50 + Math.sin((iy + count) * 0.5) * 50;
-      particle.scale.x = particle.scale.y =
-        (Math.sin((ix + count) * 0.3) + 1) * 4 +
-        (Math.sin((iy + count) * 0.5) + 1) * 4;
-    }
+  for (var i = 0; i < particles.length; i++) {
+    var particle = particles[i];
+    particle.y += particle.velocity.y;
+    particle.z += particle.velocity.z;
+
+    if (particle.y < -1000) particle.y = 1000;
+    if (particle.z < -1000 || particle.z > 1000)
+      particle.velocity.z = -particle.velocity.z;
   }
 
+  scene.children[0].geometry.verticesNeedUpdate = true;
   renderer.render(scene, camera);
+}
 
-  count += 0.1;
+// Function to switch between dark and light modes
+function switchMode(isDark) {
+  isDarkMode = isDark;
+  var material = scene.children[0].material;
+  material.map = isDarkMode ? darkModeSprite : lightModeSprite;
+  material.needsUpdate = true;
 }

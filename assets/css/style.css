@@ -2423,6 +2423,16 @@ header .arrow-down {
   opacity: 0.3;
 }
 
+.slide-creative #home_wave2 {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  /* opacity: 0.3; */
+}
 .slider-main {
   position: relative;
   overflow: hidden;
@@ -7509,8 +7519,8 @@ body.light:not(.business-home) .clients .brands .item {
 }
 
 body.light:not(.business-home) .clients .brands .img {
-  -webkit-filter: invert(1);
-  filter: invert(1);
+  /* -webkit-filter: invert(1);
+  filter: invert(1); */
   opacity: 1;
 }
 
